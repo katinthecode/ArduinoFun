@@ -1,6 +1,9 @@
 //Send SOS
 
 int ledPin = 13;
+int dot = 200;
+int dash = 500;
+int longWait = 500;
 
 void setup() {
   pinMode(ledPin, OUTPUT);
@@ -8,31 +11,34 @@ void setup() {
 
 void loop() {
   printMorseS();
-  delay(200);
   printMorseO();
-  delay(200);
   printMorseS();
-  delay(1000);
+
+  delay(longWait);
 }
 
 void printMorseS() {
   //S = ...
   for (int i = 0; i < 3; i++){
     digitalWrite(ledPin, HIGH);
-    delay(200);
+    delay(dot);
 
     digitalWrite(ledPin, LOW);
-    delay(200);
+    delay(dot);
   }
+  
+  delay(longWait);
 }
 
 void printMorseO() {
   //S = ---
   for (int i = 0; i < 3; i++){
     digitalWrite(ledPin, HIGH);
-    delay(500);
+    delay(dash);
 
     digitalWrite(ledPin, LOW);
-    delay(500);
+    delay(dash);
   }
+  
+  delay(longWait);
 }
