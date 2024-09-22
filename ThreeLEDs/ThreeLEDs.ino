@@ -9,9 +9,9 @@ int BLUE = 11;
 
 void setup() {
   // put your setup code here, to run once:
-pinMode(RED, OUTPUT);
-pinMode(GREEN, OUTPUT);
-pinMode(BLUE, OUTPUT);
+  pinMode(RED, OUTPUT);
+  pinMode(GREEN, OUTPUT);
+  pinMode(BLUE, OUTPUT);
 }
 
 void loop() {
