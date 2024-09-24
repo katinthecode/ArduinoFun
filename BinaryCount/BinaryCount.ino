@@ -1,14 +1,16 @@
-int number = 15;
+int number = 31;
 
-int pin1000 = 13;
-int pin100 = 12;
-int pin10 = 11;
-int pin1 = 10;
+int pin10000 = 13;
+int pin1000 = 12;
+int pin100 = 11;
+int pin10 = 10;
+int pin1 = 9;
 
 int delayTime = 1000;
 
 
 void setup() {
+  pinMode(pin10000, OUTPUT);
   pinMode(pin1000, OUTPUT);
   pinMode(pin100, OUTPUT);
   pinMode(pin10, OUTPUT);
@@ -16,8 +18,8 @@ void setup() {
 }
 
 void loop() {
-  // Count from 0 to 1111 (15) in binary
-  for (int i = 0; i <= 15; i++) {
+  // Count from 0 to 11111 (31) in binary
+  for (int i = 0; i <= number; i++) {
     setBinaryLights(i);
     delay(delayTime);
   }
@@ -53,6 +55,13 @@ void setBinaryLights(int num) {
     digitalWrite(pin1000, HIGH);
   } else {
     digitalWrite(pin1000, LOW);
+  }
+  
+  ans = ans / 2;
+  if (ans % 2 > 0) {
+    digitalWrite(pin10000, HIGH);
+  } else {
+    digitalWrite(pin10000, LOW);
   }
 }
  
